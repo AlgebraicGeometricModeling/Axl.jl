@@ -30,7 +30,8 @@ c1 = cone(C,B,0.7, color=Color(0,255,0))
 @axl view
 ```
 
-## Documentation
+## More information
 
-- [LATEST](http://axl.inria.fr/doc/Axl.jl/)
-- For more information on [Julia](https://julialang.org/)
+- [Documentation](http://axl.inria.fr/doc/Axl.jl/)
+- [Gitlab](https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl)
+- [Julia](https://julialang.org/)

@@ -22,6 +22,24 @@ This installation checks that `axl` is installed. If not, it installs it using t
 See [here](http://axl.inria.fr/installation.html) more details on how to install `axl`.
 
 ## Using `Axl.jl`
+Here is an example of visualization of basic geometric objects:
+```julia
+using Axl
+
+@axl start
+@axl A = point(0.,0.5,0.)
+@axl B = point(0.,1.5,0.)
+C = point(0.,3.5,0.)
+
+c0 = cylinder(A,B,0.2, color=Color(255,0,0))
+c1 = cone(C,B,0.7, color=Color(0,255,0))
+
+@axl c0, c1
+@axl m = mesh([[cos(i*pi/5), sin(i*pi/5), 0.0] for i in 1:10], Edge[], [[1,i,i+1] for i in 1:9], field = DirField(1.,0.,0.))
+
+@axl view
+```
+
 Here is an example of the visualization of a bspline surface:
 
 ```julia
@@ -34,8 +52,14 @@ C = Array{Float64}(3,5,4)
 for i in 1:5, j in 1:4
     C[:,i,j] = [i-1,j-1,5*rand()-2.5]
 end
-sf = BSplineSurface(C, B1,B2, color=Color(150,200,255))
+s = BSplineSurface(C, B1,B2, color=Color(150,200,255))
 
-@axlview sf
+@axlview s
 
 ```
+
+## More information
+
+- [Documentation](http://axl.inria.fr/doc/Axl.jl/)
+- [Gitlab](https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl)
+
