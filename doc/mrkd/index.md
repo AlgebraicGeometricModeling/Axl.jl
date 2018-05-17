@@ -22,7 +22,7 @@ This installation checks that `axl` is installed. If not, it installs it using t
 See [here](http://axl.inria.fr/installation.html) more details on how to install `axl`.
 
 ## Using `Axl.jl`
-Here is an example of visualization of basic geometric objects:
+Here is an example with a cylinder, a cone and a mesh:
 ```julia
 using Axl
 
