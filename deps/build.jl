@@ -5,7 +5,9 @@ end
 
 try run(`which axl`)
 catch;
-    using Conda
-    Conda.add_channel("axl-distrib")
-    Conda.add("axl")
-end
+    println("-- axl does not seems to be installed")
+    println("-- see http://axl.inria.fr/installation.html")
+#    using Conda
+#    Conda.add_channel("axel-distrib")
+#    Conda.add("axl")
+#end
