@@ -1,6 +1,14 @@
 export axlprint
 
 #----------------------------------------------------------------------
+function axlprint(io::IO, V::Vector{T}, idt::Int64=0 ) where {T<:Real}
+    axlprint(io, "<point size=\"0.05\" color=\"255 0 0\"> ", idt)
+    for l in V
+         print(io, l, " ")
+    end
+    axlprint(io, "</point>\n")
+end
+
 function axlprint(io::IO, L::Line{T}, idt::Int64=0 ) where T
     axlprint(io, "<line",idt)
     axlprintattr(io, L)

@@ -1,7 +1,8 @@
 module Axl
 
-using SemiAlgebraicTypes
 using EzXML
+using Reexport
+@reexport using SemiAlgebraicTypes
 
 Reader = Dict{String,Function}()
 
@@ -16,11 +17,8 @@ include("graph.jl")
 include("dots.jl")
 include("bspline.jl")
 
+export @axl, @axlview
 
-end
-
-using SemiAlgebraicTypes
-  
 AXLVIEW = Axl.axlviewer()
 """
 Initiliaze an Axl view, or add objects to the view or visualize using Axl viewer.
@@ -51,6 +49,7 @@ macro axl(arg)
     end
 end
 
+
 """
 Display a geometric object with Axl. If no argument is given, the last view is used if it exists.
 ```
@@ -60,21 +59,23 @@ A=point(1.,1.,0.); S=sphere(point(0.,0.,0.),0.5, color=color(255,0,0)); @axlview
 ```
 """
 macro axlview(arg)
-    quote
-        Axl.init(AXLVIEW)
-        Axl.axlprint(AXLVIEW.io, $(esc(arg)), 2)
-        mark(AXLVIEW.io)
-        print(AXLVIEW.io,"</axl>\n")
-        flush(AXLVIEW.io)
-        run(`axl tmp.axl`)
-    end
+     quote
+         Axl.init(AXLVIEW)
+         Axl.axlprint(AXLVIEW.io, $(esc(arg)), 2)
+         mark(AXLVIEW.io)
+         print(AXLVIEW.io,"</axl>\n")
+         flush(AXLVIEW.io)
+         run(`axl tmp.axl`)
+     end
+end
+#
+macro axlview()
+     reset(AXLVIEW.io)
+     mark(AXLVIEW.io)
+     print(AXLVIEW.io,"</axl>\n")
+     flush(AXLVIEW.io)
+     wd=pwd()
+     run(`axl $wd/tmp.axl \&`)
 end
 
-macro axlview()
-    reset(AXLVIEW.io)
-    mark(AXLVIEW.io)
-    print(AXLVIEW.io,"</axl>\n")
-    flush(AXLVIEW.io)
-    wd=pwd()
-    run(`axl $wd/tmp.axl \&`)
 end

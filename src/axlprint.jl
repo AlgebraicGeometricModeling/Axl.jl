@@ -29,13 +29,13 @@ function axlprint(io::IO, c::C, idt::Int64=0) where {C<:Real}
     print(io, c)
 end
 
-function axlprint(io::IO, L::Vector{C}, idt::Int64=0) where {C <: Real}
-    indent(io, idt)
-    for l in L
-        axlprint(io, l,1)
-    end
-end
-
+# function axlprint(io::IO, L::Vector{C}, idt::Int64=0) where {C <: Real}
+#     indent(io, idt)
+#     for l in L
+#         axlprint(io, l,1)
+#     end
+# end
+#
 function axlprint(io::IO, L::Vector, idt::Int64=0)
     for l in L
         axlprint(io, l,idt)

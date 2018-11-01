@@ -1,4 +1,6 @@
+using SemiAlgebraicTypes
 using Axl
+
 
 @axl start
 @axl A = point(0.,0.5,0.)

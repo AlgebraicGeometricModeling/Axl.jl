@@ -1,7 +1,7 @@
 using Axl
 
-B1 = BSplineBasis(linspace(0., 2., 4), 3)
-B2 = BSplineBasis(linspace(0., 1., 3), 3)
+B1 = BSplineBasis(LinRange(0., 2., 4), 3)
+B2 = BSplineBasis(LinRange(0., 1., 3), 3)
 
 C1 = [rand()*j^2/10. for i in 1:3, j in 1:5]
 f1 = BSplineCurve(C1, B1, color=Color(255,0,0))

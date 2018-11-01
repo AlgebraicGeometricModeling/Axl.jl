@@ -18,7 +18,7 @@ The package can then be installed from `Julia` as follows:
 Pkg.clone("https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git")
 Pkg.build("Axl")
 ```
-This installation checks that `axl` is installed. If not, it installs it using the Package `Conda`.
+This installation checks that `axl` is installed. If not, a warning message with instructions to install it is printed. 
 See [here](http://axl.inria.fr/installation.html) more details on how to install `axl`.
 
 ## Using `Axl.jl`

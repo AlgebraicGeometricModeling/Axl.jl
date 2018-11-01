@@ -1,4 +1,5 @@
-export axlviewer, init
+export AxlViewer, axlviewer, init
+
 mutable struct AxlViewer
     io::IOStream
 end
@@ -24,5 +25,3 @@ end
 #     wd=pwd()
 #     run(`axl tmp.axl`)
 # end
-    
-    
