@@ -1,4 +1,4 @@
-using Pkg
+import Pkg
 
 try using SemiAlgebraicTypes
 catch;
