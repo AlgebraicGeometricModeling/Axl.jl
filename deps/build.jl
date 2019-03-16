@@ -1,8 +1,4 @@
-
-
-using Pkg
-
-try using SemiAlgebraicTypes
+using Pkg; try using SemiAlgebraicTypes
 catch;
     Pkg.clone("https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git")
 end
