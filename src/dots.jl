@@ -51,8 +51,7 @@ function dots(M::Matrix{Float64}, eps = 1.e-6; args...)
     return m
 end
 
-
-function dots(M::SparseMatrixCSC{Float64,Int64}, eps = 1.e-6; args...)
+function dots(M::AbstractSparseMatrix{Float64,Int64}, eps = 1.e-6; args...)
     m = Axl.mesh(Float64)
     m[:size]=0.5
     n1 = size(M,1)

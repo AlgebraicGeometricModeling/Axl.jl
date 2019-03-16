@@ -10,6 +10,7 @@ include("axlviewer.jl")
 include("axlprint.jl")
 include("axlread.jl")
 include("objread.jl")
+include("objprint.jl")
 include("color.jl")
 include("shapes.jl")
 include("mesh.jl")
@@ -17,7 +18,7 @@ include("graph.jl")
 include("dots.jl")
 include("bspline.jl")
 
-export @axl, @axlview
+export @axl, @axlview, axlsave
 
 AXLVIEW = Axl.axlviewer()
 """
@@ -76,6 +77,14 @@ macro axlview()
      flush(AXLVIEW.io)
      wd=pwd()
      run(`axl $wd/tmp.axl \&`)
+end
+
+function axlsave(file, arg...)
+    Axl.init(AXLVIEW, file)
+    Axl.axlprint(AXLVIEW.io, arg, 2)
+    mark(AXLVIEW.io)
+    print(AXLVIEW.io,"</axl>\n")
+    flush(AXLVIEW.io)
 end
 
 end

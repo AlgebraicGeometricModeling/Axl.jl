@@ -4,15 +4,15 @@ mutable struct AxlViewer
     io::IOStream
 end
 
-axlviewer = function()
-    io = open("tmp.axl","w")
+axlviewer = function(file="tmp.axl")
+    io = open(file,"w")
     print(io,"<axl>\n")
     mark(io)
     AxlViewer(io)
 end
 
-function init(A::AxlViewer)
-    A.io = open("tmp.axl","w")
+function init(A::AxlViewer, file="tmp.axl")
+    A.io = open(file,"w")
     print(A.io,"<axl>\n")
     mark(A.io)
     flush(A.io)
