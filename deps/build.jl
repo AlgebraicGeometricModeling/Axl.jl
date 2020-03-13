@@ -1,9 +1,9 @@
-import Pkg
+#import Pkg
 
-try using SemiAlgebraicTypes
-catch;
-    Pkg.add(PackageSpec(url="https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git"))
-end
+# try using SemiAlgebraicTypes
+# catch;
+#     Pkg.add(PackageSpec(url="https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git"))
+# end
 
 try run(`which axl`)
 catch;
