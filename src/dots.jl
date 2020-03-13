@@ -1,6 +1,6 @@
 export dots, dotsupport
-using SparseArrays
 
+#using SparseArrays
 #import DynamicPolynomials: variables
 
 """
@@ -51,14 +51,14 @@ function dots(M::Matrix{Float64}, eps = 1.e-6; args...)
     return m
 end
 
-function dots(M::AbstractSparseMatrix{Float64,Int64}, eps = 1.e-6; args...)
+function dots(M::AbstractMatrix, eps = 1.e-6; args...)
     m = Axl.mesh(Float64)
     m[:size]=0.5
     n1 = size(M,1)
     n2 = size(M,2)
     n = min(n1,n2)
     C = Float64[]
-    I,J, V=findnz(M)
+    I,J,V = findnz(M)
     for l in 1:length(I)
         i = I[l]
         j = J[l]
