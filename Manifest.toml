@@ -33,10 +33,6 @@ git-tree-sha1 = "802f5b23c846cb4ed568cae0bfb0ce0d2ba1926d"
 uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
 version = "1.16.0+1"
 
-[[LinearAlgebra]]
-deps = ["Libdl"]
-uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
-
 [[Logging]]
 uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
@@ -70,12 +66,11 @@ version = "0.2.0"
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
 
 [[SemiAlgebraicTypes]]
-deps = ["LinearAlgebra"]
-git-tree-sha1 = "706522e5e34d0743eaaed0f9bf1f107a65bd5fb5"
+git-tree-sha1 = "2e55cf803cfcc507b49af82298b3b5a408d2403a"
 repo-rev = "master"
 repo-url = "https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git"
-uuid = "96019b1c-dc47-5bc3-9395-4bfbd4269732"
-version = "0.0.0"
+uuid = "12323bc8-ae32-4190-93d1-493cc9b0a926"
+version = "0.1.0"
 
 [[Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"

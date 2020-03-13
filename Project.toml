@@ -1,9 +1,4 @@
-name = "Axl"
-uuid = "71dfe527-2faa-4c0a-baac-eed73fb0ad72"
-authors = ["mourrain <bernard.mourrain@inria.fr>"]
-version = "0.1.0"
-
 [deps]
 EzXML = "8f5d6c58-4d21-5cfd-889c-e3ad7ee6a615"
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
-SemiAlgebraicTypes = "96019b1c-dc47-5bc3-9395-4bfbd4269732"
+SemiAlgebraicTypes = "12323bc8-ae32-4190-93d1-493cc9b0a926"
