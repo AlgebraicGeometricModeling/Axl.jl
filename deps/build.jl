@@ -1,4 +1,4 @@
-using Pkg
+import Pkg
 
 try using SemiAlgebraicTypes
 catch;
@@ -16,5 +16,5 @@ catch;
 #    Conda.add("axl")
 end
 
-println("Axl.jl packacge installed")
-println("Documentation available at http://axl.inria.fr/doc/Axl.jl/")
+println("Axl.jl package installed")
+println("Documentation: http://axl.inria.fr/doc/Axl.jl/")

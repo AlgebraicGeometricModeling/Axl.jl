@@ -8,7 +8,7 @@ To install the package within julia:
 
 ```julia
 using Pkg
-Pkg.clone("https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git")
+Pkg.add(PackacgeSpec("https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git"))
 Pkg.build("Axl")
 ```
 ## More information
