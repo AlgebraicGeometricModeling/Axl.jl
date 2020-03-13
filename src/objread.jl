@@ -1,12 +1,12 @@
 export objread
 
+#----------------------------------------------------------------------
 """
 Read an obj file and ouput a mesh.
 ```
 objread("file.obj")
 ```
 """
-#----------------------------------------------------------------------
 function objread(file::String)
     io = open(file)
     m = mesh(Float64)
