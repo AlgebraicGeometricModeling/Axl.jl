@@ -2,7 +2,7 @@ using Pkg
 
 try using SemiAlgebraicTypes
 catch;
-    Pkg.clone("https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git")
+    Pkg.add(PackageSpec(url="https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git"))
 end
 
 try run(`which axl`)
@@ -15,3 +15,6 @@ catch;
 #    Conda.add_channel("axel-distrib")
 #    Conda.add("axl")
 end
+
+println("Axl.jl packacge installed")
+println("Documentation available at http://axl.inria.fr/doc/Axl.jl/")

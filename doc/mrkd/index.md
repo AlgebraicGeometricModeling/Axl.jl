@@ -15,7 +15,8 @@ To use this package, `julia` needs first to be installed (see [here](https://jul
 
 The package can then be installed from `Julia` as follows:
 ```
-Pkg.clone("https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git")
+using Pkg
+Pkg.add(PackageSpec(url="https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git"))
 Pkg.build("Axl")
 ```
 This installation checks that `axl` is installed. If not, a warning message with instructions to install it is printed. 
@@ -45,10 +46,10 @@ Here is an example of the visualization of a bspline surface:
 ```julia
 using Axl
 
-B1 = BSplineBasis(linspace(0., 2., 4), 3)
-B2 = BSplineBasis(linspace(0., 1., 3), 3)
+B1 = BSplineBasis(LinRange(0., 2., 4), 3)
+B2 = BSplineBasis(LinRange(0., 1., 3), 3)
 
-C = Array{Float64}(3,5,4)
+C = fill(0.0,3,5,4)
 for i in 1:5, j in 1:4
     C[:,i,j] = [i-1,j-1,5*rand()-2.5]
 end
