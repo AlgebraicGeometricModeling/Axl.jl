@@ -1,6 +1,6 @@
 The package `Axl.jl` is for the connection between Axl and Julia. 
 
-The algebraic-geometric modeler `axl`should be installed (see [axl.inria.fr](http://axl.inria.fr)). 
+The algebraic-geometric modeler `axl` should be installed (see [axl.inria.fr](http://axl.inria.fr)). 
 
 ## Installation
 
