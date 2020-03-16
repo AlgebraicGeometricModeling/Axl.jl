@@ -1,6 +1,6 @@
 # Viewer
 
-The object in `SemiAlgebraicTypes` can be vizualized, using `Axl`. They are printed in a file `tmp.axl`
+The objects in `SemiAlgebraicTypes` can be vizualized, using `Axl`. They are printed in a file `tmp.axl`
 and Axl is then run on this view file.
 
 ```
@@ -27,11 +27,12 @@ and Axl is then run on this view file.
 ```
 @axlview m
 ```
-> Save the object m in the viewfile and visualize it
+> Save the object `m` in the viewfile and visualize it
     
 
 ## Example     
 ```
+using Axl
 @axl start
 A = point(0.,0.5,0.)
 B = point(0.,1.5,0.)

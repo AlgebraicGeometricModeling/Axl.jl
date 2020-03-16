@@ -1,12 +1,13 @@
 export parametric, polar
 
 """
-Plot the parametric surface f: (u,v) -> [x,y,z] for u in the interval X, v in the interval Y.
+Compute the parametric curve f: u -> [x,y,z] for u in the interval X.
 ```
-parametric((u,v)->[u,v,cos(2*u*v)], 0.0 => 2.0, -pi => pi, field=DistField(0.0,0.0,0.0))
+c = parametric(u->[u,sin(u^2),cos(2*u)], 0.0 => 2.0*pi, 1000; field=DistField(0.0,0.0,0.0))
+@axlview c
 ```
 """
-function parametric(f::Function, X::Pair, N::Int=50; args...)
+function parametric(f::Function, X::Pair, N::Int=100; args...)
     rx = LinRange(X.first,X.second,N)
     m = mesh(Float64)
     for x in rx
@@ -22,12 +23,13 @@ end
 
 
 """
-Plot the parametric surface f: (u,v) -> [x,y,z] for u in the interval X, v in the interval Y.
+Compute the parametric surface f: (u,v) -> [x,y,z] for u in the interval X, v in the interval Y.
 ```
-parametric((u,v)->[u,v,cos(2*u*v)], 0.0 => 2.0, -pi => pi, field=DistField(0.0,0.0,0.0))
+s = parametric((u,v)->[u,v,cos(2*u*v)], 0.0 => 2.0, -pi => pi, field=DistField(0.0,0.0,0.0))
+@axlview s
 ```
 """
-function parametric(f::Function, X::Pair, Y::Pair, N::Int=50; args...)
+function parametric(f::Function, X::Pair, Y::Pair, N::Int=100; args...)
     rx = LinRange(X.first,X.second,N)
     ry = LinRange(Y.first,Y.second,N)
     m = mesh(Float64)
