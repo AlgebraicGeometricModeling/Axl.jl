@@ -1,30 +1,4 @@
-export BSplineCurve, BSplineSurface, axlprint, axlreadbspline
-
-mutable struct BSplineCurve
-    map ::BSplineFunction1D
-    attr::Dict{Symbol,Any}
-
-    function BSplineCurve(points, knots, order, extend=true)
-        map = BSplineFunction1D(points,knots,order,extend)
-        new(map, Dict{Symbol,Any}())
-    end
-
-    function BSplineCurve(points, bs::BSplineBasis; args...)
-        dict =  Dict{Symbol,Any}()
-        for arg in args
-            dict[arg[1]]=arg[2]
-        end
-        new( BSplineFunction1D(points, bs), dict)
-    end
-
-    function BSplineCurve(points, bs::BSplineBasis, dict::Dict{Symbol,Any})
-        new( BSplineFunction1D(points, bs), dict)
-    end
-end
-
-function Base.getindex(f::BSplineCurve, s::Symbol)  get(f.attr, s, 0) end
-function Base.setindex!(f::BSplineCurve, v, s::Symbol)  f.attr[s] = v end
-
+export axlprint, axlreadbspline
 
 function axlprint(io::IO, f::BSplineCurve, idt::Int64 = 0)
     indent(io, idt);
@@ -50,26 +24,6 @@ function axlprint(io::IO, f::BSplineCurve, idt::Int64 = 0)
     indent(io, idt); print(io, "</curve>\n")
 end
 #----------------------------------------------------------------------
-mutable struct BSplineSurface
-    map  ::BSplineFunction2D
-    attr ::Dict{Symbol,Any}
-
-    function BSplineSurface(points, bs1::BSplineBasis, bs2::BSplineBasis; args...)
-        dict =  Dict{Symbol,Any}()
-        for arg in args
-            dict[arg[1]]=arg[2]
-        end
-        new(BSplineFunction2D(points,bs1,bs2), dict)
-    end
-    
-    function BSplineSurface(points, bs1::BSplineBasis, bs2::BSplineBasis, dict::Dict{Symbol,Any})
-        new(BSplineFunction2D(points, bs1, bs2), dict)
-    end
-end
-
-function Base.getindex(f::BSplineSurface, s::Symbol)  get(f.attr, s, 0) end
-function Base.setindex!(f::BSplineSurface, v, s::Symbol)  f.attr[s] = v end
-
 #----------------------------------------------------------------------
 function axlprint(io::IO, f::BSplineSurface, idt::Int64 = 0)
     indent(io, idt);
@@ -98,26 +52,6 @@ end
 
 
 #----------------------------------------------------------------------
-mutable struct BSplineVolume
-    map  ::BSplineFunction3D
-    attr ::Dict{Symbol,Any}
-
-    function BSplineVolume(points, bs1::BSplineBasis, bs2::BSplineBasis, bs3::BSplineBasis; args...)
-        dict =  Dict{Symbol,Any}()
-        for arg in args
-            dict[arg[1]]=arg[2]
-        end
-        new(BSplineFunction3D(points,bs1,bs2,bs3), dict)
-    end
-    
-    function BSplineVolume(points, bs1::BSplineBasis, bs2::BSplineBasis, bs3::BSplineBasis, dict::Dict{Symbol,Any})
-        new(BSplineFunction3D(points, bs1, bs2, bs3), dict)
-    end
-end
-
-function Base.getindex(f::BSplineVolume, s::Symbol)  get(f.attr, s, 0) end
-function Base.setindex!(f::BSplineVolume, v, s::Symbol)  f.attr[s] = v end
-
 #----------------------------------------------------------------------
 function axlprint(io::IO, f::BSplineVolume, idt::Int64 = 0)
     indent(io, idt);
