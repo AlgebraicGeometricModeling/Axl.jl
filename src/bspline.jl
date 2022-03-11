@@ -42,9 +42,13 @@ function axlprint(io::IO, f::BSplineSurface, idt::Int64 = 0)
     indent(io, idt+2); print(io, "<knots>"); for t in f.map.basis1.knots print(io," ",t) end; print(io,"</knots>\n")
     indent(io, idt+2); print(io, "<knots>"); for t in f.map.basis2.knots print(io," ",t) end; print(io,"</knots>\n")    
     indent(io, idt+2); print(io, "<points>\n")
-    for  j in 1:size(f.map.points,3), i in 1:size(f.map.points,2)
-        print(io, f.map.points[:,i,j], idt+2)
-        print(io,"\n")
+
+
+    for j in 1:size(f.map.points,3)
+        for i in 1:size(f.map.points,2)
+            print(io, f.map.points[:,i,j], idt+2)
+            print(io,"\n")
+        end
     end
     indent(io, idt); print(io, "</points>\n")
     indent(io, idt); print(io, "</surface>\n")

@@ -1,8 +1,8 @@
 export axlprint
 
 #----------------------------------------------------------------------
-function axlprint(io::IO, V::Vector{T}, idt::Int64=0 ) where {T<:Real}
-    axlprint(io, "<point size=\"0.05\" color=\"255 0 0\"> ", idt)
+function axlprint(io::IO, V::Vector{T}, idt::Int64=0) where {T<:Real}
+    axlprint(io, "<point size=\""*string(AXLENV[:size])*"\" color=\""*AXLENV[:rgb]*" "*string(AXLENV[:opacity])*"\"> ", idt)
     for l in V
          print(io, l, " ")
     end

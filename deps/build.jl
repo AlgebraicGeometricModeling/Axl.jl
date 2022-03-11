@@ -6,15 +6,17 @@
 # end
 
 try run(`which axl`)
+
+    @info "axl installed
+  Documentation: http://axl.inria.fr/doc/Axl.jl/"
+
 catch;
-    println("-- axl does not seems to be installed")
-    println("-- It can be installed with conda: \"conda install axl -c axel-distrib\"")
-    println("-- see http://axl.inria.fr/installation.html")
+    @warn "axl does not seems to be installed
+  It can be installed with conda: \"conda install axl -c axel-distrib\"
+  see http://axl.inria.fr/installation.html"
 
 #    using Conda
 #    Conda.add_channel("axel-distrib")
 #    Conda.add("axl")
 end
 
-println("Axl.jl package installed")
-println("Documentation: http://axl.inria.fr/doc/Axl.jl/")

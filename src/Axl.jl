@@ -18,7 +18,7 @@ include("graph.jl")
 include("dots.jl")
 include("bspline.jl")
 
-export @axl, @axlview, axlsave
+export @axl, @axlview, axlsave, AXLENV
 
 AXLVIEW = Axl.axlviewer()
 """
@@ -49,6 +49,8 @@ macro axl(arg)
         end
     end
 end
+
+AXLENV = Dict{Symbol,Any}( :size => 0.025, :opacity => 1.0, :rgb => "255 0 0")
 
 
 """
