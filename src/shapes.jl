@@ -108,3 +108,39 @@ Reader["cone"] = function(obj::EzXML.Node)
     return c
 end
 #----------------------------------------------------------------------
+function axlprint(io::IO, E::Ellipsoid{T}, idt::Int64=0 ) where T
+    axlprint(io, "<ellipsoid",idt)
+    axlprintattr(io,E)
+    println(io, ">")
+    axlprinttag(io, E.c, "center", idt+2)
+    axlprinttag(io, E.sx, "semix", idt+2)
+    axlprinttag(io, E.sy, "semiy", idt+2)
+    axlprinttag(io, E.sz, "semiz", idt+2)
+    if E[:field] != 0 axlprintfield(io,  E[:field], idt) end
+    axlprint(io, "</ellipsoid>\n",idt)
+end
+
+Reader["ellipsoid"] = function(obj::EzXML.Node)
+
+    c = fill(0.0,3)
+    sx = fill(0.0,3)
+    sy = fill(0.0,3)
+    sz = fill(0.0,3)
+
+    for e in elements(obj)
+        if nodename(e)=="center"
+            c = map(x->parse(Float64,x), split(nodecontent(e)))
+        elseif nodename(e)=="semix"
+            sx = map(x->parse(Float64,x), split(nodecontent(e)))
+        elseif nodename(e)=="semiy"
+            sy = map(x->parse(Float64,x), split(nodecontent(e)))
+        elseif nodename(e)=="semiz"
+            sz = map(x->parse(Float64,x), split(nodecontent(e)))
+        end
+    end
+    c = ellipsoid(c,sx,sy,sz)
+    axlsetattr!(c,obj)
+    return c
+end
+#----------------------------------------------------------------------
+

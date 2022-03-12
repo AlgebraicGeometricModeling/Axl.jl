@@ -50,6 +50,8 @@ function axlprintattr(io::IO, M)
     end
     if M[:size] !=0
         print(io, " size=\"", M[:size],"\"")
+    else
+        print(io, " size=\"", AXLENV[:size],"\"")
     end
     if length(M[:name]) !=0
         print(io, " name=\"", M[:name], "\"")

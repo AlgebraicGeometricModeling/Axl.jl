@@ -18,7 +18,7 @@ include("graph.jl")
 include("dots.jl")
 include("bspline.jl")
 
-export @axl, @axlview, axlsave, AXLENV
+export @axl, @axlview, axlsave
 
 AXLVIEW = Axl.axlviewer()
 """
@@ -50,7 +50,15 @@ macro axl(arg)
     end
 end
 
+export AXLENV
 AXLENV = Dict{Symbol,Any}( :size => 0.025, :opacity => 1.0, :rgb => "255 0 0")
+
+export red, green ,blue, yellow, orange
+red    = Color(255,0,0)
+green  = Color(0,255,0)
+blue   = Color(0,0,255)
+yellow = Color(255,255,0)
+orange = Color(255,100,0)
 
 
 """
