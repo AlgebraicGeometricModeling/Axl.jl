@@ -8,8 +8,8 @@ To install the package within julia:
 
 ```julia
 ] # key to switch to the pkg mode
-add https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git
-add https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git
+add https://github.com/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git
+add https://github.com/AlgebraicGeometricModeling/Axl.jl.git
 build Axl
 ```
 
@@ -18,5 +18,5 @@ The package depends on [`SemiAlgebraicTypes.jl`](https://gitlab.inria.fr/Algebra
 ## More information
 
 - [Documentation](http://axl.inria.fr/doc/Axl.jl/)
-- [Gitlab](https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl)
+- [github](https://github.com/AlgebraicGeometricModeling/Axl.jl)
 - [Julia](https://julialang.org/)
