@@ -13,10 +13,14 @@ add https://github.com/AlgebraicGeometricModeling/Axl.jl.git
 build Axl
 ```
 
-The package depends on [`SemiAlgebraicTypes.jl`](https://gitlab.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl).
+The package depends on [`SemiAlgebraicTypes.jl`](https://github.inria.fr/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl).
     
+## Documentation
+    
+[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://AlgebraicGeometricModeling.github.io/Axl.jl/)
+    
+
 ## More information
 
-- [Documentation](http://axl.inria.fr/doc/Axl.jl/)
 - [github](https://github.com/AlgebraicGeometricModeling/Axl.jl)
 - [Julia](https://julialang.org/)
