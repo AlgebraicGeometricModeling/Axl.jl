@@ -1,4 +1,8 @@
-all: 
+all: Axl.jl
 	julia --color=yes make.jl
-web:
-	rsync -a ./html/ mourrain@excalibur2.inria.fr:/var/www/html/axl/doc/Axl.jl/
+
+Axl.jl:
+	git clone -b gh-pages https://github.com/AlgebraicGeometricModeling/Axl.jl.git
+
+publish:
+	cd Axl.jl; git add docs; git commit -am "update gh-pages"; git push

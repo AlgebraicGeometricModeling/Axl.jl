@@ -15,9 +15,9 @@ To use this package, `julia` needs first to be installed (see [here](https://jul
 
 The package can then be installed from `Julia` as follows:
 ```
-using Pkg
-Pkg.add(PackageSpec(url="https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git"))
-Pkg.build("Axl")
+]
+add https://github.com/AlgebraicGeometricModeling/Axl.jl
+build Axl
 ```
 This installation checks that `axl` is installed. If not, a warning message with instructions to install it is printed. 
 See [here](http://axl.inria.fr/installation.html) more details on how to install `axl`.

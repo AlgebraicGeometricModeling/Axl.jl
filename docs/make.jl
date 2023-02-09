@@ -31,11 +31,10 @@ Code = ["viewer.md", "readers.md", "color.md"];
 Fcts = map(file -> joinpath("fcts", file), filter(x ->endswith(x, "md"), readdir(dir*"/fcts")))
 
 makedocs(
-#         format = :html,
          sitename = "Axl.jl",
          authors = "B. Mourrain",
          modules = [Axl],
-         build = "html",
+         build = "Axl.jl/docs",
          source = dir,
          pages = Any[
              "Home" => "index.md",
@@ -45,16 +44,16 @@ makedocs(
              "Functions" => Fcts,
              "Examples" => Expls
          ],
-         repo = "https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl/tree/master",
+         repo = "https://github.com/AlgebraicGeometricModeling/Axl.jl/",
          doctest = false
          )
 
-#deploydocs(
+deploydocs(
 #           deps = Deps.pip("mkdocs", "pigments", "python-markdown-math"),
-#           repo = "gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl.git",
+           repo = "github.com/AlgebraicGeometricModeling/Axl.jl.git"
 #           target = "site",
 #           julia  = "0.6",
 #           osname = "osx",
 #           deps = nothing,
 #           make = nothing
-#           )
+)
