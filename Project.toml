@@ -8,4 +8,6 @@ EzXML = "8f5d6c58-4d21-5cfd-889c-e3ad7ee6a615"
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 SemiAlgebraicTypes = "94bd45ad-7a68-435f-8a71-8b2caa00d1b6"
 
+[compat]
+julia = "1"
 

@@ -62,5 +62,5 @@ s = BSplineSurface(C, B1,B2, color=Color(150,200,255))
 ## More information
 
 - [Documentation](http://axl.inria.fr/doc/Axl.jl/)
-- [Gitlab](https://gitlab.inria.fr/AlgebraicGeometricModeling/Axl.jl)
+- [Github](https://github.com/AlgebraicGeometricModeling/Axl.jl)
 

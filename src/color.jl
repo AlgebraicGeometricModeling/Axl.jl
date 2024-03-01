@@ -1,4 +1,3 @@
-export DirField, dirfield, DistField, distfield
 
 Reader["color"] = function(obj::EzXML.Node)
     @assert haskey(obj,"color") "No color attribute"
@@ -10,16 +9,6 @@ Reader["color"] = function(obj::EzXML.Node)
     end
 end
 
-"""
-Scalar field described by a vector `dir`. The field value at a point is obtained by taking the scalar product with the vector.
-"""
-mutable struct DirField
-    dir::Vector{Float64}
-    
-    function DirField(x::Float64=1.0, y::Float64=0.0, z::Float64=0.0)
-        new([x,y,z])
-    end
-end
 
 function axlprintfield(io::IO, dir::DirField, idt::Int64)
     axlprint(io, "<field type=\"axlFieldSpatialCoordinates\">\n", idt)
@@ -32,15 +21,6 @@ function axlprintfield(io::IO, dir::DirField, idt::Int64)
     axlprint(io, "</field>\n", idt)
 end
 
-"""
-Scalar field described by the point `pt`. The field value at a point is obtained by computing the distance to the point `pt`.
-"""
-mutable struct DistField
-    pt::Vector{Float64}
-    function DistField(x::Float64=0.0, y::Float64=0.0, z::Float64=0.0)
-        new([x,y,z])
-    end
-end
 
 function axlprintfield(io::IO, dist::DistField, idt::Int64)
     axlprint(io, "<field type=\"axlFieldSpatialPointDistance\">\n", idt)

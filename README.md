@@ -8,8 +8,8 @@ To install the package within julia:
 
 ```julia
 ] # key to switch to the pkg mode
-add https://github.com/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl.git
-add https://github.com/AlgebraicGeometricModeling/Axl.jl.git
+add https://github.com/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl
+add https://github.com/AlgebraicGeometricModeling/Axl.jl
 build Axl
 ```
 
