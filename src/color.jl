@@ -1,3 +1,4 @@
+using SemiAlgebraicTypes
 
 Reader["color"] = function(obj::EzXML.Node)
     @assert haskey(obj,"color") "No color attribute"
