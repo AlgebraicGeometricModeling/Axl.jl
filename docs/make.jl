@@ -44,16 +44,7 @@ makedocs(
              "Functions" => Fcts,
              "Examples" => Expls
          ],
-         repo = "https://github.com/AlgebraicGeometricModeling/Axl.jl/",
+         repo = Remotes.GitHub("AlgebraicGeometricModeling", "Axl.jl"),
          doctest = false
          )
 
-deploydocs(
-#           deps = Deps.pip("mkdocs", "pigments", "python-markdown-math"),
-           repo = "github.com/AlgebraicGeometricModeling/Axl.jl.git"
-#           target = "site",
-#           julia  = "0.6",
-#           osname = "osx",
-#           deps = nothing,
-#           make = nothing
-)

@@ -7,8 +7,7 @@ The algebraic-geometric modeler `axl` should be installed (see [axl.inria.fr](ht
 To install the package within julia:
 
 ```julia
-] # key to switch to the pkg mode
-add https://github.com/AlgebraicGeometricModeling/SemiAlgebraicTypes.jl
+]              # key to switch to the pkg mode
 add https://github.com/AlgebraicGeometricModeling/Axl.jl
 build Axl
 ```

@@ -45,6 +45,11 @@ C = point(0.,3.5,0.)
 @axlview c0, sphere(A,0.5)
 ```
 
+## Functions
 
-
+```@docs
+@axl
+@axlview
+objprint
+```
 

@@ -15,7 +15,7 @@ To use this package, `julia` needs first to be installed (see [here](https://jul
 
 The package can then be installed from `Julia` as follows:
 ```
-]
+]              # key to switch to the pkg mode
 add https://github.com/AlgebraicGeometricModeling/Axl.jl
 build Axl
 ```
@@ -61,6 +61,6 @@ s = BSplineSurface(C, B1,B2, color=Color(150,200,255))
 
 ## More information
 
-- [Documentation](http://axl.inria.fr/doc/Axl.jl/)
-- [Github](https://github.com/AlgebraicGeometricModeling/Axl.jl)
+- [Documentation](https://algebraicgeometricmodeling.github.io/Axl.jl/)
+- [Source](https://github.com/AlgebraicGeometricModeling/Axl.jl)
 

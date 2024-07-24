@@ -14,9 +14,6 @@ obj[:key]=value
 
 ## Color
 
-```@docs
-Color
-```
 Here is an example of a sphere, with the attribute `color` set to the red color.
 ```jldoctest
 S = sphere(point(0.,1.,0.), 0.5, color=Color(255,0,0))
@@ -26,10 +23,6 @@ S = sphere(point(0.,1.,0.), 0.5, color=Color(255,0,0))
 
 ## Fields
 
-```@docs
-DirField
-```
-
 Here is an example of a cylinder, with a directional field for the direction [1,1,0].
 ```jldoctest
 C = cylinder(point(0.,0.,0.), point(0.,1.,0.), 0.5, field=DirField(1.,1.,0.))
@@ -37,9 +30,7 @@ C = cylinder(point(0.,0.,0.), point(0.,1.,0.), 0.5, field=DirField(1.,1.,0.))
 
 ![DirField](fig/cylinder_dir.png)
 
-```@docs
-DistField
-```
+here is an example with a distance field:
 
 ```jldoctest
 C = cone(point(0.,0.,0.), point(0.,1.,0.), 0.5, field=DistField(0.5,0.,0.))
