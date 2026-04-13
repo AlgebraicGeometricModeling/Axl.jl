@@ -16,7 +16,7 @@ The package depends on [`SemiAlgebraicTypes.jl`](https://github.com/AlgebraicGeo
     
 ## Documentation
     
-[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://AlgebraicGeometricModeling.github.io/Axl.jl/)
+[![](https://img.shields.io/badge/docs-blue.svg)](https://AlgebraicGeometricModeling.github.io/Axl.jl/)
     
 
 ## More information
