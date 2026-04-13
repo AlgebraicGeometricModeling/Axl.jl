@@ -47,6 +47,8 @@ function axlprintattr(io::IO, M)
     if isa(M[:color],Color)
         color = M[:color]
         print(io, " color=\"", color.r, " ", color.g, " ", color.b, " ", color.t,"\"")
+    else
+        print(io, " color=\"50 10 255\"")
     end
     if M[:size] !=0
         print(io, " size=\"", M[:size],"\"")
