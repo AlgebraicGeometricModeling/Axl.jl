@@ -1,16 +1,13 @@
 module Axl
 
 using EzXML
-using Reexport
-@reexport using SemiAlgebraicTypes
+using SemiAlgebraicTypes
 
 Reader = Dict{String,Function}()
 
 include("axlviewer.jl")
 include("axlprint.jl")
 include("axlread.jl")
-#include("objread.jl")
-#include("objprint.jl")
 include("color.jl")
 include("shapes.jl")
 include("mesh.jl")

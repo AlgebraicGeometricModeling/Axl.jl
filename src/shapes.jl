@@ -1,5 +1,6 @@
-export axlprint
+using SemiAlgebraicTypes
 
+export axlprint
 #----------------------------------------------------------------------
 function axlprint(io::IO, V::Vector{T}, idt::Int64=0) where {T<:Real}
     axlprint(io, "<point size=\""*string(AXLENV[:size])*"\" color=\""*AXLENV[:rgb]*" "*string(AXLENV[:opacity])*"\"> ", idt)
@@ -9,11 +10,19 @@ function axlprint(io::IO, V::Vector{T}, idt::Int64=0) where {T<:Real}
     axlprint(io, "</point>\n")
 end
 
+function axlprint(io::IO, P::SemiAlgebraicTypes.Point{T}, idt::Int64=0) where {T<:Real}
+
+    axlprint(io, "<point",idt)
+    axlprintattr(io, P)
+    print(io, ">")
+    print(io, P[1], " ", P[2], " ", P[3])
+    axlprint(io, "</point>\n")
+end
+
 function axlprint(io::IO, L::Line{T}, idt::Int64=0 ) where T
     axlprint(io, "<line",idt)
     axlprintattr(io, L)
     println(io, ">")
-
     axlprinttag(io, L.pt0, "point", idt+2)
     axlprinttag(io, L.pt1, "point", idt+2)
     axlprint(io, "</line>\n", idt)
@@ -63,7 +72,7 @@ function axlprint(io::IO, C::Cylinder{T}, idt::Int64=0 ) where T
     axlprinttag(io, C.pt0, "point", idt+2)
     axlprinttag(io, C.pt1, "point", idt+2)
     axlprinttag(io, C.radius,"radius",idt+2)
-    if C[:field] != 0 axlprintfield(io, C[:field], idt) end
+    if C[:field] != nothing axlprintfield(io, C[:field], idt) end
     axlprint(io, "</cylinder>\n",idt)
 end
 
@@ -86,10 +95,12 @@ function axlprint(io::IO, C::Cone{T}, idt::Int64=0 ) where T
     axlprint(io, "<cone",idt)
     axlprintattr(io,C)
     println(io, ">")
-    axlprinttag(io, C.pt0, "point", idt+2)
     axlprinttag(io, C.pt1, "point", idt+2)
+    axlprinttag(io, C.pt0, "point", idt+2)
     axlprinttag(io, C.radius,"radius", idt+2)
-    if C[:field] != 0 axlprintfield(io,  C[:field], idt) end
+    if C[:field] != nothing
+        axlprintfield(io,  C[:field], idt)
+    end
     axlprint(io, "</cone>\n",idt)
 end
 
@@ -107,6 +118,7 @@ Reader["cone"] = function(obj::EzXML.Node)
     axlsetattr!(c,obj)
     return c
 end
+
 #----------------------------------------------------------------------
 function axlprint(io::IO, E::Ellipsoid{T}, idt::Int64=0 ) where T
     axlprint(io, "<ellipsoid",idt)
@@ -116,7 +128,7 @@ function axlprint(io::IO, E::Ellipsoid{T}, idt::Int64=0 ) where T
     axlprinttag(io, E.sx, "semix", idt+2)
     axlprinttag(io, E.sy, "semiy", idt+2)
     axlprinttag(io, E.sz, "semiz", idt+2)
-    if E[:field] != 0 axlprintfield(io,  E[:field], idt) end
+    if E[:field] != nothing axlprintfield(io,  E[:field], idt) end
     axlprint(io, "</ellipsoid>\n",idt)
 end
 

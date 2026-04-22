@@ -50,12 +50,12 @@ function axlprintattr(io::IO, M)
     else
         print(io, " color=\"50 10 255\"")
     end
-    if M[:size] !=0
+    if M[:size] != nothing
         print(io, " size=\"", M[:size],"\"")
     else
         print(io, " size=\"", AXLENV[:size],"\"")
     end
-    if length(M[:name]) !=0
+    if M[:name] != nothing
         print(io, " name=\"", M[:name], "\"")
     end
 end

@@ -17,6 +17,6 @@ for i in 1:5, j in 1:4
     C2[:,i,j]= [(i-1)/4,(j-1)/3,rand()]
 end
 
-f2 = BSplineSurface(C2, B1,B2, color=Color(100,200,255))
+f2 = BSplineSurface(C2, B1,B2;  color=Color(100,200,255))
 
 @axlview f1,f2
