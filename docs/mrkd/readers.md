@@ -19,8 +19,3 @@ The list `l` contains a copy of the sphere `s` and of the mesh `c`.
 
 
 
-## Obj reader
-
-```@docs
-objread
-```

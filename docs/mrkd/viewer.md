@@ -50,6 +50,5 @@ C = point(0.,3.5,0.)
 ```@docs
 @axl
 @axlview
-objprint
 ```
 
